@@ -265,11 +265,11 @@
         '            <div class="popup-actions">'+
         '                <div class="compare-container">'+
         '                    <label for="compare">Compare</label>'+
-        '                    <input type="checkbox" id="compareCheck" name="compare" value="" onclick="compareThisMarker(this)">'+
+        '                    <input type="checkbox" id="compareCheck" name="compare" value="" onclick="compareThisMarker(this, \''+ description + '\')">'+
         '                    <a href="#">View Asset --></a>'+
         '                </div>'+
         '                '+
-        ''+
+        ''                +
         '                '+
         '            </div>'+
         '        </div>'+
@@ -313,10 +313,10 @@
     //////Custom Functions///////
 
     //////Make compare function visible and handle buttons//////
-    let compareThisMarker = checkbox => {
+    let compareThisMarker = (checkbox, description) => {
         let compareContainer = document.getElementsByClassName('compare-buttons')[0]; 
         let compareButtonHTML = '<button class="compare-button asset-button" id="korvel">'+
-                                '  Korvel' +
+                                description +
                                 '</button>';
         if(checkbox.checked){
             document.getElementById('masterCompareBtn').insertAdjacentHTML("beforebegin", 
