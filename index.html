@@ -201,13 +201,26 @@
                 'type': 'Feature',
                     'properties': {
                         'description':
-                        '<strong>POPUP</strong>',
+                        'Korvel',
                         'icon': 'rocket',
                         'DOM': "HTML"
                     },
                     'geometry': {
                         'type': 'Point',
                         'coordinates': [ 5.45495, 51.450631]
+                    }
+                },
+                {
+                'type': 'Feature',
+                    'properties': {
+                        'description':
+                        'Strijp-S',
+                        'icon': 'airport',
+                        'DOM': "HTML"
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [ 5.45460, 51.450610]
                     }
                 }
             ]
@@ -226,10 +239,11 @@
     });
     
     ////RAW HTML for custom Pop-Up
+    let generateHTML = description => {
     let popupHTML = '<div class="popup-inner">'+
         '            <div class="popup-title">'+
         '                <img src="https://via.placeholder.com/50" alt="">'+
-        '                <h2>Korvel</h2>'+
+        '                <h2>'+ description +'</h2>'+
         '            </div>'+
         '            <div class="popup-bar">'+
         '                <div class="bar-container">'+
@@ -260,15 +274,18 @@
         '            </div>'+
         '        </div>'+
         '';
-
+            return popupHTML;
+    };
         
 
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
     map.on('click', 'places', function (e) {
-    var coordinates = e.features[0].geometry.coordinates.slice();
     var description = e.features[0].properties.description;
-
+    generatedHTML = generateHTML(description);
+    var coordinates = e.features[0].geometry.coordinates.slice();
+    
+    
     // Ensure that if the map is zoomed out such that multiple
     // copies of the feature are visible, the popup appears
     // over the copy being pointed to.
@@ -278,7 +295,7 @@
 
     new mapboxgl.Popup({className: 'pop-ups'})
     .setLngLat(coordinates)
-    .setHTML(popupHTML)
+    .setHTML(generatedHTML)
     .addTo(map);
     });
 
@@ -307,7 +324,6 @@
                 compareContainer.style.opacity = 1; 
                 document.getElementById('masterCompareBtn').style.cursor = "pointer";
         } else { 
-
             document.getElementById('korvel').remove();
             console.log('jo!');
             compareContainer.style.opacity  = 0.15; 
