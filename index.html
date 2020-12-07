@@ -9,10 +9,10 @@
     <style>
         .pop-ups{
             transform:none !important;
-            top: 10%;
-            left: 90%;
-            
+            top: 5%;
+            left: 80%;
         }
+
         .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
         .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
         .mapboxgl-popup-anchor-center .mapboxgl-popup-tip,
@@ -23,9 +23,117 @@
         .mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip, 
         .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip{
             display:none !important;
-
-
         }
+
+        .mapboxgl-popup-content {
+            position: relative;
+            height: 350px;
+            width: 275px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            font-family: Raleway, Geneva, Tahoma, sans-serif;
+        }
+
+       
+        
+        .popup-inner{
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: relative;
+            height: 350px;
+            width: 250px;
+            background-color: white;
+        }
+        
+        .popup-title {
+            position: relative;
+            background-color:white;
+            width: 250px;
+            height: auto;
+            padding: 15px 0;
+            border-bottom: 1px solid lightgray;
+           
+        }
+
+        .popup-title * {
+            display: inline;
+            vertical-align: middle;
+        }
+
+        .popup-bar {
+            position: relative;
+            background-color:white;
+            width: 250px;
+            height: auto;
+            padding: 30px 0;
+            border-bottom: 1px solid lightgray;
+            
+        }
+
+        .bar-container{
+            position: relative;
+            width: 90%;
+            height: 15px;
+            background-color: grey;
+            border: 1px solid lightgray;
+            margin: auto;
+            margin-bottom: 20px;
+            
+        }
+
+        .bar-container::before{
+            content: "0";
+            position: absolute;
+            top: 25px;
+        }
+
+        .bar-container::after{
+            content: "100";
+            position: absolute;
+            right: 0px;
+            top: 25px;
+        }
+
+        .bar-inner {
+            height: 100%;
+            width: 40%;
+            background-color: rgb(47, 255, 57);
+        }
+
+        .bar-inner::before {
+            content: "40";
+            position: absolute;
+            top: 25px;
+            left: 40%;
+        }
+
+        .popup-list {
+            display: flex;
+            width: 250px;
+            height: auto;
+            background-color: white;
+            border-bottom: 1px solid lightgray;
+        }
+
+        .popup-list #column2{
+            font-weight: bold;
+        }
+        
+        .column {
+            flex: 50%;
+        }
+        .popup-actions{
+            margin: 20px 0;
+        }
+        .popup-actions a{
+           
+            float: right;
+        }
+
     </style>
 </head>
 <body>
@@ -77,9 +185,43 @@
         }
     });
     
+    ////RAW HTML for custom Pop-Up
+    let popupHTML = '<div class="popup-inner">'+
+        '            <div class="popup-title">'+
+        '                <img src="https://via.placeholder.com/50" alt="">'+
+        '                <h2>Korvel</h2>'+
+        '            </div>'+
+        '            <div class="popup-bar">'+
+        '                <div class="bar-container">'+
+        '                    <div class="bar-inner"></div>'+
+        '                  </div>'+
+        '            </div>'+
+        '            <div class="popup-list">'+
+        '                <div class="column" id=column1>'+
+        '                    <p>Humidity</p>'+
+        '                    <p>Temperature</p>'+
+        '                    <p>Manufacturer</p>'+
+        '                </div>'+
+        '                <div class="column" id=column2>'+
+        '                    <p>30</p>'+
+        '                    <p>16</p>'+
+        '                    <p>Intermo</p>'+
+        '                </div>'+
+        '            </div> '+
+        '            <div class="popup-actions">'+
+        '                <div class="compare-container">'+
+        '                    <label for="compare">Compare</label>'+
+        '                    <input type="checkbox" id="compareCheck" name="compare" value="" onclick="compareThisMarker(this)">'+
+        '                    <a href="#">View Asset --></a>'+
+        '                </div>'+
+        '                '+
+        ''+
+        '                '+
+        '            </div>'+
+        '        </div>'+
+        '';
 
-    
-
+        
 
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
@@ -96,7 +238,7 @@
 
     new mapboxgl.Popup({className: 'pop-ups'})
     .setLngLat(coordinates)
-    .setHTML(description)
+    .setHTML(popupHTML)
     .addTo(map);
     });
 
@@ -111,7 +253,16 @@
     });
     });
 
+    //////Custom Functions///////
 
+    //////Make compare function visible//////
+    let compareThisMarker = (checkbox) => {
+        if(checkbox.checked){
+            console.log("CHECK!")
+        } else { 
+            console.log('unchcken!')
+        }
+    }
 
     </script>
 </body>
