@@ -1,0 +1,80 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker": "parking",
+        "places-total": 50,
+        "places-used": 26
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.45746922492981,
+          51.445281374259274
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker": "parking",
+        "places-total": 65,
+        "places-used": 59
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.452394485473633,
+          51.44891220207161
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker": "parking",
+        "places-total": 45,
+        "places-used": 21
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4595184326171875,
+          51.4443385153992
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker": "parking",
+        "places-total": 35,
+        "places-used": 8
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.460162162780762,
+          51.44744786979256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker": "parking",
+        "places-total": 30,
+        "places-used": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4545992612838745,
+          51.448367261983854
+        ]
+      }
+    }
+  ]
+}
