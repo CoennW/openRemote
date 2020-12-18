@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Attach a popup to a marker instance</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<style>
+
+.mapboxgl-popup {
+width: auto;
+height: auto;
+}
+
+.filter-ctrl {
+position: absolute;
+top: 100px;
+right: 100px;
+z-index: 1;
+}
+
+.filter-ctrl input[type='text'] {
+font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+width: 100%;
+border: 0;
+background-color: #fff;
+margin: 0;
+color: rgba(0, 0, 0, 0.5);
+padding: 10px;
+box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+border-radius: 3px;
+width: 180px;
+}
+
+
+.mapboxgl-popup-content {
+    position: relative;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    padding: 10px 10px 15px;
+    pointer-events: auto;
+    width: 350px;
+}
+
+
+#groen{
+	background-repeat: no-repeat;
+}
+
+#rood{
+	background-repeat: no-repeat;
+}
+
+#oranje{
+	background-repeat: no-repeat;
+}
+
+#geel{
+	background-repeat: no-repeat;
+}
+
+
+
+
+
+</style>
+
+<div id="map"></div>
+
+
+
+<div class="filter-ctrl">
+<input
+id="filter-input"
+type="text"
+name="filter"
+placeholder="Filter by name"
+/>
+
+<button onclick="filter()"> groen </button>
+
+<button onclick="rood()"> rood </button>
+
+<button onclick="alles()"> alles </button>
+
+<button onclick="niks()"> niks </button>
+
+<input type="range" id="range" min="1" max="100"  />
+
+</div>
+
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoib3BlbnJlbW90ZWJvb3QiLCJhIjoiY2tncWhqNHkwMDVybzJycDJ6YTlnajd5MiJ9.BMmrms6FqKqOwqFnZqTSQA';
+
+
+
+var places = {
+'type': 'FeatureCollection',
+'features': [
+{
+'type': 'Feature',
+'properties': {
+
+	'max-space': 320,
+'ocupied': 55,
+	'percentage': 23,
+
+'description':
+		'text'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-77.038659, 38.931567]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+
+	'max-space': 220,
+	'ocupied': 20,
+		'percentage': 28,
+
+'description':
+		'text'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-77.137481, 38.876516]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+
+	'max-space': 220,
+	'ocupied': 22,
+		'percentage': 51,
+
+'description':
+		'text'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-77.187481, 38.877516]
+}
+},
+
+
+
+{
+'type': 'Feature',
+'properties': {
+
+	'max-space': 220,
+	'ocupied': 50,
+		'percentage': 85,
+
+'description':
+		'text'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-77.107481, 38.876516]
+}
+}
+]
+};
+var layerIDs = []; // Will contain a list used to filter against.
+var filterInput = document.getElementById('filter-input');
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/openremoteboot/ckgqhaai72yuw19ny71t7rsid',
+        center: [-77.04, 38.907],
+        zoom: 11.15
+    });
+
+
+
+    map.on('load', function () {
+        map.loadImage('https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png',function (error, image) {
+                if (error) throw error;
+                map.addImage('custom-marker', image);
+
+								map.addSource('places', {
+								'type': 'geojson',
+								'data': places
+								});
+								
+
+                // Add a layer showing the places.
+
+
+									places.features.forEach(function (marker) {
+
+
+                    //pakt gemiddelde array
+										//var ocupied = marker.properties['ocupied'];
+										//var max = marker.properties['max-space'];
+										var per = marker.properties['percentage'];
+
+										//var per = (ocupied) / (max) * 100;
+
+
+
+
+										var el = document.createElement('div');
+										el.className = 'mark';
+
+
+
+
+										if (per < 25 ){
+
+											el.id = 'groen';
+											el.innerHTML = '<h1 class="percentage">' + per + '</p>';
+											el.style.backgroundImage =
+											'url(mark' +
+											'2' +
+											'.png';
+
+											el.style.width = '80px';
+											el.style.height = '80px';
+
+										} else if(per > 25 && per < 50) {
+
+
+											el.id = 'geel';
+											el.innerHTML = '<h1 class="percentage">' + per + '</p>';
+											el.style.backgroundImage =
+											'url(mark' +
+											'3' +
+											'.png';
+
+											el.style.width = '80px';
+											el.style.height = '80px';
+
+										} else if (per > 50 && per < 75) {
+
+
+											el.id = 'oranje';
+											el.innerHTML = '<h1 class="percentage">' + per + '</p>';
+											el.style.backgroundImage =
+											'url(mark' +
+											'4' +
+											'.png';
+
+											el.style.width = '80px';
+											el.style.height = '80px';
+
+										} else{
+
+											el.id = 'rood';
+											el.innerHTML = '<h1 class="percentage">' + per + '</p>';
+											el.style.backgroundImage =
+											'url(mark' +
+											'1' +
+											'.png';
+
+											el.style.width = '80px';
+											el.style.height = '80px';
+
+										}
+
+										// add marker to map
+										new mapboxgl.Marker(el).setLngLat(marker.geometry.coordinates).addTo(map);
+
+										});
+
+
+
+
+
+
+
+
+        });
+
+
+				filterInput.addEventListener('keyup', function (e) {
+				// If the input value matches a layerID set
+				// it's visibility to 'visible' or else hide it.
+				var value = e.target.value.trim().toLowerCase();
+				layerIDs.forEach(function (layerID) {
+				map.setLayoutProperty(
+				layerID,
+				'visibility',
+				layerID.indexOf(value) > -1 ? 'visible' : 'none'
+				);
+				});
+				});
+
+
+
+    });
+
+
+
+
+
+
+
+		function filterwaarde(){
+			var back = document.getElementsByClassName()
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

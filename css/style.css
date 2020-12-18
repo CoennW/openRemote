@@ -1,5 +1,5 @@
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif !important;
     width: 100%;
     height: 100vh;
     float: left;
@@ -9,7 +9,7 @@ body{
 }
 
 .filter_bar{
-    width: 25%;
+    width: 20%;
     top: 49px;
     height: 100vh;
     background-color: white;
@@ -33,6 +33,150 @@ body{
     background-color: black;
     color: white;
     float: left;
+}
+
+.vl_line{
+    float: left;
+    border-left: 1px solid #bdc3c7;
+    height: 7vh;
+    width: 1%;
+    margin: 0;
+    margin-top: -3vh;
+    margin-left: 13%;
+}
+
+.ui-widget-content{
+    background: linear-gradient(-90deg, rgba(255,0,0,1) 0%, rgba(255,102,0,1) 33%, rgba(255,247,0,1) 66%, rgba(9,255,0,1) 100%) !important;
+}
+
+.ui-widget-header{
+    background: none;
+}
+
+.eye_icon{
+    float: left;
+    width: 11%;
+    height: auto;
+    margin-top: -2vh;
+    margin-left: 5%;
+}
+
+.eye_icon img{
+    width: 100%;
+    height: auto;
+}
+
+.parking_icon{
+    float: left;
+    width: 8%;
+    height: auto;
+    margin-left: 1%;
+    height: 2vh;
+    margin-top: 1vh;
+}
+
+h3{
+    float: left;
+    margin-left: 4%;
+    width: 96%;
+    font-weight: normal;
+}
+
+.parking_icon img{
+    width: 100%;
+    height: auto;
+}
+
+.caution_card{
+    float: left;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 0.6vh;
+    margin-bottom: 2vh;
+    height: 9h;
+    background-color: white;
+    border-radius: 3%;
+}
+
+.filter_card{
+    float: left;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 0.6vh;
+    margin-bottom: 2vh;
+    height: auto;
+    background-color: white;
+    border-radius: 3%;
+}
+
+#amount{
+    float: left;
+    width: 90%;
+    margin: 5%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+.filter_card h2{
+    width: 80%;
+    float: left;
+}
+
+.first_card{
+    margin-top: 2.3vh !important;
+}
+
+.caution_max{
+    overflow-y: scroll !important;
+    height: 30vh !important;
+}
+
+.filter_max{
+    overflow-y: scroll !important;
+    height: 50vh !important;
+}
+
+.caution_card p, h2{
+    float: left;
+    width: 60%;
+    margin-left: 3%;
+}
+
+.caution_card p{
+    margin-top: 2%;
+    margin-bottom: 5%;
+    font-size: 1.1em;
+}
+
+.caution_card h2{
+    margin-top: 5%;
+    margin-bottom: 0%;
+    margin-left: 2%;
+}
+
+.mapboxgl-map{
+    font-family: 'Raleway', sans-serif !important;
+}
+
+button{
+    font-family: 'Raleway', sans-serif !important;
 }
 
 h1{
@@ -96,16 +240,15 @@ p{
     font-weight: bold;
     cursor: pointer;
     padding: 18px;
-    width: 90%;
-    padding-left: 5%;
+    width: 100%;
     border: none;
     text-align: left;
     outline: none;
     font-size: 15px;
 }
   
-.active, .collapsible:hover {
-    background-color: #f8f8f8;
+.active{
+    background-color: white;
 }
   
 .collapsible:after {
@@ -126,6 +269,9 @@ p{
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     background-color: #f8f8f8;
+    -webkit-box-shadow: inset 0px 0px 12px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: inset 0px 0px 12px 0px rgba(0,0,0,0.3);
+    box-shadow: inset 0px 0px 12px 0px rgba(0,0,0,0.3);
 }
 
 hr.solid {
@@ -143,10 +289,22 @@ hr.solid {
 
     float: left;
     z-index: 1;
-    }
+    width: 70%;
+    height: auto;
+}
+
+.percentage_indicator{
+    float: left;
+    width: 5%;
+    margin: 5%;
+    margin-top: -.8vh;
+}
+
+input{
+    text-align: center;
+}
     
     .filter-ctrl input[type='text'] {
-    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     width: 100%;
     border: 0;
     background-color: #fff;
@@ -185,8 +343,10 @@ hr.solid {
 
 .pop-ups{
     transform:none !important;
-    top: 5%;
-    left: 80%;
+    top: 10%;
+    left: 83%;
+    
+    
 }
 
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
@@ -240,6 +400,7 @@ hr.solid {
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-family: Raleway, Geneva, Tahoma, sans-serif;
+    opacity: 1;
 }
 
 .popup-inner{
@@ -252,6 +413,7 @@ hr.solid {
     height: 350px;
     width: 250px;
     background-color: white;
+    
 }
 
 .popup-title {
@@ -308,16 +470,21 @@ hr.solid {
 
 .bar-inner {
     height: 100%;
-    width: 40%;
     background-color: #E8E8E8;
     float: right;
+    width: 100%;
 }
 
-.bar-inner::before {
-    content: "40";
-    position: absolute;
-    top: 25px;
-    left: 60%;
+#dataNumber {
+    display: table;
+    position: absolute; 
+    top: 30px;
+    left: 0%;
+    color: black;
+}
+
+.transform {
+    transition: all 0.2s ease;
 }
 
 .popup-list {
