@@ -34,6 +34,7 @@ As seen below, the state of the marker is changed based on the level of the data
 
 In this case these marker states relate to the ocupied spaces on a parking lot, going from green (less than 25% of the capacity ocupied) up to red (above 75% capacity ocupied) 
 
+![alt text](https://ibb.co/nmrC18b "Markers")
  
 
 #### 3.2 Filter function 
