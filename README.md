@@ -28,24 +28,30 @@ We added several new funtions and elements to the Map view. All the new function
 
 #### 3.1 Marker states based on data 
 
+![alt text](https://i.ibb.co/H47dPpV/Tekengebied-5.png "Markers")
+
 As seen below, the state of the marker is changed based on the level of the data. There are 4 marker states: 
+
+![alt text](https://i.ibb.co/7zjgkQw/Microsoft-Teams-image-7.jpg "Markers")
 
 *afb in kaart 
 
 In this case these marker states relate to the ocupied spaces on a parking lot, going from green (less than 25% of the capacity ocupied) up to red (above 75% capacity ocupied) 
 
-![alt text](https://i.ibb.co/H47dPpV/Tekengebied-5.png "Markers")
+
  
 
 #### 3.2 Filter function 
+
+![alt text](https://i.ibb.co/f0LHT5Y/Tekengebied-2.png "Filters")
 
 There is an option to set a range of percentages of which the markers will be shown on the map. This is done with the dual slider we have desigsend and realised in this application.  
 
  
 
- 
-
 #### 3.3 Compare Function 
+
+![alt text](https://i.ibb.co/VtBZkPZ/Tekengebied-6.png "Compare")
 
 Each marker has a pop up attached to it on which the marker can be add to a selection of markers that can be compared in a later screen. 
 
