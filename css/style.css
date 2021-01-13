@@ -23,7 +23,7 @@ body{
     top: 0;
     width: 100%;
     height: 49px;
-    -webkit-box-shadow: 0px 1px 2px 0px #5a5a5a; 
+    -webkit-box-shadow: 0px 1px 2px 0px #5a5a5a;
     box-shadow: 0px 1px 2px 0px #5a5a5a;
 }
 
@@ -118,20 +118,20 @@ h3{
 ::-webkit-scrollbar {
     width: 10px;
   }
-  
+
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: #f1f1f1;
   }
-   
+
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #888; 
+    background: #888;
   }
-  
+
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background: #555;
   }
 
 .filter_card h2{
@@ -203,7 +203,7 @@ table{
     z-index: 1;
     right: 1%;
     top: 8%;
-    -webkit-box-shadow: 0px 1px 2px 0px #5a5a5a; 
+    -webkit-box-shadow: 0px 1px 2px 0px #5a5a5a;
     box-shadow: 0px 1px 2px 0px #5a5a5a;
 }
 
@@ -229,7 +229,7 @@ p{
     z-index: 1;
     left: 1%;
     top: 8%;
-    -webkit-box-shadow: 0px 1px 2px 0px #5a5a5a; 
+    -webkit-box-shadow: 0px 1px 2px 0px #5a5a5a;
     box-shadow: 0px 1px 2px 0px #5a5a5a;
     border-radius: 2%;
 }
@@ -246,11 +246,11 @@ p{
     outline: none;
     font-size: 15px;
 }
-  
+
 .active{
     background-color: white;
 }
-  
+
 .collapsible:after {
     content: '\002B';
     color: black;
@@ -258,11 +258,11 @@ p{
     float: right;
     margin-left: 5px;
 }
-  
+
 .active:after {
     content: "\2212";
 }
-  
+
 .content {
     padding: 0 18px;
     max-height: 0;
@@ -303,7 +303,7 @@ hr.solid {
 input{
     text-align: center;
 }
-    
+
     .filter-ctrl input[type='text'] {
     width: 100%;
     border: 0;
@@ -320,20 +320,20 @@ input{
     #groen{
         background-repeat: no-repeat;
     }
-    
+
     #rood{
         background-repeat: no-repeat;
     }
-    
+
     #oranje{
         background-repeat: no-repeat;
     }
-    
+
     #geel{
         background-repeat: no-repeat;
     }
-    
-    
+
+
 
 
 /*                 ----------- CSS VAN COEN  --------------                  */
@@ -345,8 +345,8 @@ input{
     transform:none !important;
     top: 10%;
     left: 83%;
-    
-    
+
+
 }
 
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
@@ -356,7 +356,7 @@ input{
 .mapboxgl-popup-anchor-right .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
-.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip, 
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip{
     display:none !important;
 }
@@ -367,11 +367,11 @@ input{
     opacity: 10%;
     right: 5%;
     bottom: 5%;
-    
+
 }
 
 .compare-button{
-    
+
     background-color: green;
     border: none;
     border-radius: 20px;
@@ -413,7 +413,7 @@ input{
     height: 350px;
     width: 250px;
     background-color: white;
-    
+
 }
 
 .popup-title {
@@ -423,7 +423,7 @@ input{
     height: auto;
     padding: 15px 0;
     border-bottom: 1px solid lightgray;
-   
+
 }
 
 .popup-title * {
@@ -438,7 +438,7 @@ input{
     height: auto;
     padding: 30px 0;
     border-bottom: 1px solid lightgray;
-    
+
 }
 
 .bar-container{
@@ -477,7 +477,7 @@ input{
 
 #dataNumber {
     display: table;
-    position: absolute; 
+    position: absolute;
     top: 30px;
     left: 0%;
     color: black;
@@ -506,6 +506,6 @@ input{
     margin: 20px 0;
 }
 .popup-actions a{
-   
+
     float: right;
 }

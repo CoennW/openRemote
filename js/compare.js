@@ -1,27 +1,28 @@
 ///////////html and data for popup///////////////
 let compareTheseAssets = [];
 
-let generateHTML = (data, checked) => {
+let generateHTML = (data, checked, iconURL) => {
+    
     let popupHTML = '<div class="popup-inner transform">' +
         '            <div class="popup-title">' +
-        '                <img src="https://via.placeholder.com/50" alt="">' +
+        '                <img src="' + iconURL + '" alt="">' +
         '                <h2>' + data.properties.description + '</h2>' +
         '            </div>' +
         '            <div class="popup-bar">' +
-        '                <div class="bar-container"> <div id="dataNumber">0</div>' + 
+        '                <div class="bar-container"> <div id="dataNumber">0</div>' +
         '                    <div class="bar-inner" id="animate'+ data.properties.description +'"></div>' +
         '                  </div>' +
         '            </div>' +
         '            <div class="popup-list">' +
         '                <div class="column" id=column1>' +
-        '                    <p>Humidity</p>' +
-        '                    <p>Temperature</p>' +
-        '                    <p>Manufacturer</p>' +
+        '                   <p>' + Object.keys(data.properties.assetData)[0].replace("_", " ") + '</p>' +
+        '                   <p>' + Object.keys(data.properties.assetData)[1].replace("_", " ") + '</p>' +
+        '                   <p>' + Object.keys(data.properties.assetData)[2] + '</p>' +
         '                </div>' +
         '                <div class="column" id=column2>' +
-        '                    <p>30</p>' +
-        '                    <p>16</p>' +
-        '                    <p>Intermo</p>' +
+        '                    <p>' + Object.values(data.properties.assetData)[0] + '</p>' +
+        '                    <p>' + Object.values(data.properties.assetData)[1] + '</p>' +
+        '                    <p>' + Object.values(data.properties.assetData)[2] + '</p>' +
         '                </div>' +
         '            </div> ' +
         '            <div class="popup-actions">' +
@@ -75,7 +76,7 @@ let compareThisMarker = (checkbox, description) => {
     }
 }
 
-///CHECK the state when popup appears and check it if data says so 
+///CHECK the state when popup appears and check it if data says so
 let checkboxState = (description) => {
     if (compareTheseAssets.indexOf(description) !== -1) {
         return 'checked';

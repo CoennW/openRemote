@@ -4,54 +4,78 @@
     {
       "type": "Feature",
       "properties": {
-        "marker": "parking",
-        "places-total": 50,
-        "places-used": 26
+        "description": "Strijp-S",
+        "asset": "mark",
+        "places_total": 50,
+        "places_used": 26,
+        "assetData": {
+          "Daily_tariff": 17, 
+          "Hourly_tariff": 7,
+          "Manufacturer": "SKIDATA"
+          }
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.45746922492981,
-          51.445281374259274
+         5.45246922492981,
+          51.449281374259274
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "marker": "parking",
-        "places-total": 65,
-        "places-used": 59
+        "description": "Limbeek-Noord",
+        "asset": "mark",
+        "places_total": 65,
+        "places_used": 59,
+        "assetData": {
+          "Daily_tariff": 12, 
+          "Hourly_tariff": 8,
+          "Manufacturer": "Kiestra"
+          }
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.452394485473633,
-          51.44891220207161
+           5.455394485473633,
+          51.44191220207161
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "marker": "parking",
-        "places-total": 45,
-        "places-used": 21
+        "description": "Kastanjelaan",
+        "asset": "mark",
+        "places_total": 45,
+        "places_used": 21,
+        "assetData": {
+          "Daily_tariff": 12, 
+          "Hourly_tariff": 1,
+          "Manufacturer": "SKIDATA"
+          }
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.4595184326171875,
-          51.4443385153992
+           5.4688584326171875,
+          51.4588385153992
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "marker": "parking",
-        "places-total": 35,
-        "places-used": 8
+        "description": "Beukenlaan",
+        "asset": "mark",
+        "places_total": 35,
+        "places_used": 8,
+        "assetData": {
+          "Daily_tariff": 14, 
+          "Hourly_tariff": 4,
+          "Manufacturer": "SKIDATA"
+          }
       },
       "geometry": {
         "type": "Point",
@@ -60,13 +84,19 @@
           51.44744786979256
         ]
       }
-    },
+    }, 
     {
       "type": "Feature",
       "properties": {
-        "marker": "parking",
-        "places-total": 30,
-        "places-used": 15
+        "description": "Sparrenstraat",
+        "asset": "mark",
+        "places_total": 30,
+        "places_used": 15,
+        "assetData": {
+          "Daily_tariff": 23, 
+          "Hourly_tariff": "3.5",
+          "Manufacturer": "SKIDATA"
+          }
       },
       "geometry": {
         "type": "Point",

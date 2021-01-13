@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "Museumpark",
+        "asset": "ozon",
+        "level": "40",
+        "assetData": {
+          "Model": "Josene Outdoor", 
+          "Humidity": "No Data",
+          "Manufacturer": "SKIDATA"
+          }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.45746922492981,
+          51.445281374259274
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "Kaappark",
+        "asset": "ozon",
+        "level": "55",
+        "assetData": {
+          "Model": "Josene Outdoor", 
+          "Humidity": "No Data",
+          "Manufacturer": "SKIDATA"
+          }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.452394485473633,
+          51.44891220207161
+        ]
+      }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "Eendrachtsplein",
+        "asset": "ozon",
+        "level": "75",
+        "assetData": {
+          "Model": "Josene Outdoor", 
+          "Humidity": "No Data",
+          "Manufacturer": "SKIDATA"
+          }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4595184326171875,
+          51.4443385153992
+        ]
+      }
+    }
+  ]
+}
